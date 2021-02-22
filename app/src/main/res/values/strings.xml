@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Antino_NewsDemoApp</string>
+    <string name="title_activity_current_page">CurrentPage</string>
+    <string name="general">General</string>
+    <string name="technology">Technology</string>
+    <string name="politics">Politics</string>
+    <string name="sports">Sports</string>
+    <string name="share_market">Share Market</string>
+    <string name="mobile_industry">Mobile Industry</string>
+    <string name="science">Science</string>
+    <string name="health_and_wellness">Health and Wellness</string>
+    <string name="animal_planet">Animal Planet</string>
+</resources>

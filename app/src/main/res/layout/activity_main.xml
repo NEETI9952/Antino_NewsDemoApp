@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="6dp"
+    tools:context=".MainActivity">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="18dp"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/general">
+
+                        </com.google.android.material.chip.Chip>
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/technology">
+
+                        </com.google.android.material.chip.Chip>
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/politics" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/sports" />
+
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Business" />
+
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/mobile_industry" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/science" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/share_market" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/health_and_wellness" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/animal_planet" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/CustomChipStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Entertainment" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

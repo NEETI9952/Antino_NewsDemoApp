@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "126296163361",
+    "project_id": "antino-newsdemoapp",
+    "storage_bucket": "antino-newsdemoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126296163361:android:aaba13c43f25c3a7d0cf60",
+        "android_client_info": {
+          "package_name": "com.example.antino_newsdemoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126296163361-51nkfn7u8ue99j1963udfgnruclgr47u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBpPv_wuK1qscwYjBqqFU6AiOMI8EJPUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126296163361-51nkfn7u8ue99j1963udfgnruclgr47u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

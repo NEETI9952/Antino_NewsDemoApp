@@ -23,8 +23,13 @@ import com.example.antino_newsdemoapp.Api.ApiClient;
 import com.example.antino_newsdemoapp.Api.ApiInterface;
 import com.example.antino_newsdemoapp.Models.Article;
 import com.example.antino_newsdemoapp.Models.News;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 //import android.app.SearchManager;
 //import android.widget.SearchView;
 //import android.widget.SearchView.OnQueryTextListener;
@@ -37,8 +42,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static DocumentReference newsApiKeyRef=db.collection("Antino").document("NewsApiKey");
 
-    public static final String API_KEY = "25b07b773b464c178a8826e0b3611814";
+    public static String API_KEY = "34c3bea4d49c4122bab34ea3b62a57f6";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private List<Article> articles = new ArrayList<>();
@@ -50,10 +57,14 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private Boolean chipSelected = false;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getApiKeyFromFirestore();
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -88,6 +99,15 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         });
 
+    }
+
+    private void getApiKeyFromFirestore() {
+        newsApiKeyRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                API_KEY=documentSnapshot.get("ApiKey").toString();
+            }
+        });
     }
 
     public void loadJson(final String keyword) {

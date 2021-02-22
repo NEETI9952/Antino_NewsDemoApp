@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private SwipeRefreshLayout swipeRefreshLayout;
     private String mkeyword = "";
     private ChipGroup chipGroup;
-    private Boolean chipSelected = false;
+
 
 
 
@@ -87,12 +87,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 Chip chip = chipGroup.findViewById(i);
 
                 if (chip != null) {
-                    chipSelected = true;
                     mkeyword = chip.getText().toString();
                     loadJson(mkeyword);
                 } else {
                     mkeyword = "";
-                    chipSelected = false;
                     loadJson(mkeyword);
                 }
 
@@ -178,8 +176,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (query.length() > 2) {
-                    chipGroup.setVisibility(View.GONE);
-//
+
                     mkeyword = query;
                     onLoadingSwipeRefresh(mkeyword);
                 }
@@ -188,8 +185,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mkeyword = newText;
 
+                mkeyword = newText;
                 loadJson(mkeyword);
                 return false;
             }
